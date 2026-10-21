@@ -1,0 +1,15 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Private, per-account PC builds. Never use allow read, write: if true.
+    match /users/{userId}/builds/{buildId} {
+      allow read, create, update, delete: if request.auth != null
+        && request.auth.uid == userId;
+    }
+    // Private, per-account custom GPUs. There is no public write permission.
+    match /users/{userId}/gpus/{gpuId} {
+      allow read, create, update, delete: if request.auth != null
+        && request.auth.uid == userId;
+    }
+  }
+}
