@@ -52,3 +52,4 @@ Dữ liệu ở **chế độ khách** chỉ nằm trong localStorage của trì
 - `index.html` — toàn bộ giao diện + JavaScript, dùng độc lập.
 - `firestore.rules` — quy tắc đọc/ghi Firestore theo UID, cần chủ trang publish bằng Firebase Console.
 - `README.md` — tài liệu sử dụng và triển khai.
+VGA LAB - Website review VGA va AI PC Builder
